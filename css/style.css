@@ -1,5 +1,18 @@
+@import url("https://fonts.googleapis.com/css?family=Concert+One");
+body { background-image: url(https://images.pexels.com/photos/628281/pexels-photo-628281.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940); background-position: cover; font-family: 'Concert One', cursive; margin: 0 auto; max-width: 1200px; }
+
+* { box-sizing: border-box; }
+
 .board h1 { text-align: center; }
 
-button.create-column { text-align: center; }
+.column { float: left; width: 33.33%; text-align: center; border: 2px solid darkgreen; background: lightgreen; border-radius: 25px; margin: 0; }
+
+button { text-align: center; border-radius: 15px; font-size: 18px; }
+
+.create-column { margin: auto; display: block; margin-bottom: 20px; }
 
 .card-placeholder { background: red; }
+
+ul { min-height: 50px; }
+
+li { list-style-type: none; }
