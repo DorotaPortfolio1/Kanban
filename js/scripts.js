@@ -86,7 +86,13 @@ $(function() {
   $('.create-column').click(function() {
     var name = prompt('Enter a column name');
     var column = new Column(name);
-    board.addColumn(column);
+        if ( name.length <= 0 ) {
+      var noTitleColumn = new Column("Untitled Column"); 
+      board.addColumn(noTitleColumn);
+    }
+      else {
+        board.addColumn(column);
+      }
   });
   // CREATING COLUMNS
   var todoColumn = new Column('To do');
