@@ -25,10 +25,18 @@ $(function() {
       $columnDelete.click(function() {
         self.removeColumn();
       });
-      $columnAddCard.click(function(event) {   
-        self.addCard(new Card(prompt("Enter the name of the card")));
-        if (!name.length) {
+      $columnAddCard.click(function(event) { 
+        var cardName = prompt("Enter the name of the card");
+        var card = new Card(cardName);
+        /*powyżej rozbicie tej funkcji: self.addCard(new Card(prompt("Enter the name of the card"))); */
+        if (cardName.length != null) {
           self.addCard(new Card("Untitled Card"));
+        }
+        /* else if (cardName.length === null) {
+            break;
+          } */
+        else {
+          self.addCard(card);
         }
       });
       // CONSTRUCTION COLUMN ELEMENT
@@ -90,10 +98,12 @@ $(function() {
   $('.create-column').click(function() {
     var name = prompt('Enter a column name');
     var column = new Column(name);
-    if (!name.length) {
+    if (name.length != null) {
       var noTitleColumn = new Column("Untitled Column"); 
       board.addColumn(noTitleColumn);
-    } else {
+    } /* else if (name.length = null) {
+      break } */
+     else {
       board.addColumn(column);
     }
   });
