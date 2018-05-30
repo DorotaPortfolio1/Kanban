@@ -25,17 +25,14 @@ $(function() {
       $columnDelete.click(function() {
         self.removeColumn();
       });
-      $columnAddCard.click(function(event) { 
+      $columnAddCard.click(function(event) {
         var cardName = prompt("Enter the name of the card");
-        var card = new Card(cardName);
         /*powyżej rozbicie tej funkcji: self.addCard(new Card(prompt("Enter the name of the card"))); */
-        if (cardName.length != null) {
-          self.addCard(new Card("Untitled Card"));
-        }
-        /* else if (cardName.length === null) {
-            break;
-          } */
-        else {
+        if (cardName !== null) {
+          if (cardName === "") {
+            cardName = "Untitled Card";
+          }
+          var card = new Card(cardName);
           self.addCard(card);
         }
       });
@@ -65,7 +62,6 @@ $(function() {
       var $card = $('<li>').addClass('card');
       var $cardDescription = $('<p>').addClass('card-description').text(self.description);
       var $cardDelete = $('<button>').addClass('btn-delete').text('x');
-
       // BINDING TO CLICK EVENT
       $cardDelete.click(function() {
         self.removeCard();
@@ -97,13 +93,11 @@ $(function() {
   }
   $('.create-column').click(function() {
     var name = prompt('Enter a column name');
-    var column = new Column(name);
-    if (name.length != null) {
-      var noTitleColumn = new Column("Untitled Column"); 
-      board.addColumn(noTitleColumn);
-    } /* else if (name.length = null) {
-      break } */
-     else {
+    if (name !== null) {
+      if (name === "") {
+        name = "Untitled Column";
+      }
+      var column = new Column(name);
       board.addColumn(column);
     }
   });
