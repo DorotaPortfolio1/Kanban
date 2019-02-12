@@ -1,3 +1,3 @@
 Link to see my Kanban board:
 
-git@github.com:DorotaPortfolio1/Kanban.git
+https://dorotaportfolio1.github.io/Kanban/
